@@ -1,0 +1,62 @@
+{
+  "copilot.agents.enabled": true,
+  
+  "copilot.agents.top5": {
+    "explore": {
+      "name": "Explore Agent",
+      "description": "Fast agent for codebase exploration and research",
+      "enabled": true,
+      "useCase": "Multiple independent research threads, cross-cutting investigations",
+      "model": "default",
+      "priority": 1
+    },
+    "task": {
+      "name": "Task Agent",
+      "description": "Execute commands with verbose output (tests, builds, lints)",
+      "enabled": true,
+      "useCase": "Running builds, tests, linting, and installation commands",
+      "model": "lightweight",
+      "priority": 2
+    },
+    "general-purpose": {
+      "name": "General Purpose Agent",
+      "description": "Full-capability agent for complex multi-step tasks",
+      "enabled": true,
+      "useCase": "Complex multi-step tasks requiring complete toolset and reasoning",
+      "model": "high-capability",
+      "priority": 3
+    },
+    "code-review": {
+      "name": "Code Review Agent",
+      "description": "Read-only reviewer of diffs and code changes",
+      "enabled": true,
+      "useCase": "Reviewing staged, unstaged, or branch diffs for bugs and vulnerabilities",
+      "model": "default",
+      "priority": 4
+    },
+    "security-review": {
+      "name": "Security Review Agent",
+      "description": "Specialist for security vulnerability detection",
+      "enabled": true,
+      "useCase": "Finding exploitable security vulnerabilities and security issues",
+      "model": "high-capability",
+      "priority": 5
+    }
+  },
+
+  "copilot.agents.defaultConfig": {
+    "background.useBackground": true,
+    "background.notifyOnCompletion": true,
+    "parallelization.enabled": true,
+    "contextManagement.usePageInfo": true,
+    "errorHandling.retryOnFailure": true
+  },
+
+  "copilot.agents.recommendations": {
+    "when_to_use_explore": "Use for independent research threads requiring substantial separate context (multiple unrelated questions, complex cross-cutting investigations). For simple lookups, use grep/glob/view directly.",
+    "when_to_use_task": "Use for commands where you only need to know success/failure status. Returns brief summary on success, full output on failure.",
+    "when_to_use_general_purpose": "Use for complex multi-step tasks requiring the complete toolset and high-quality reasoning in a separate context window.",
+    "when_to_use_code_review": "Use for reviewing existing staged, unstaged, or branch diffs. Reports only high-confidence bugs and security vulnerabilities.",
+    "when_to_use_security_review": "Use ONLY when the user explicitly asks to find security vulnerabilities, before investigating directly."
+  }
+}

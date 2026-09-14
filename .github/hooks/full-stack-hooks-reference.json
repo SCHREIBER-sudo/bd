@@ -1,0 +1,20 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "python ./.github/hooks/scripts/full_stack_hook_guard.py --event SessionStart",
+        "windows": "py .\\.github\\hooks\\scripts\\full_stack_hook_guard.py --event SessionStart",
+        "timeout": 10
+      }
+    ],
+    "PreToolUse": [
+      {
+        "type": "command",
+        "command": "python ./.github/hooks/scripts/full_stack_hook_guard.py --event PreToolUse",
+        "windows": "py .\\.github\\hooks\\scripts\\full_stack_hook_guard.py --event PreToolUse",
+        "timeout": 15
+      }
+    ]
+  }
+}
